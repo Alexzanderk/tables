@@ -5,6 +5,7 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
         title Document
+        //- link(rel="stylesheet", href=require('./../style/main.sass'))
         //- script(src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js")
     body
         .container
@@ -15,15 +16,15 @@ html(lang="en")
                     button.btn(id="btnCreateTableFrame") Create Table
                     button.btn(id="btnAddRow") Add Row
                     button.btn(id="btnDeleteTBody") Clear Table
-                .table
-                    table
-                        thead
-                            tr
-                                td asddddd
-                                td asssd
-                                td asdssss
-                        tbody
-                            tr
-                                td asd
-                                td asd
-                                td asd
+                #tableContainer
+                    //- table.table
+                    //-     thead.thead
+                    //-         tr.tr
+                    //-             td.td asddddd
+                    //-             td.td asssd
+                    //-             td.td asdssss
+                    //-     tbody.tbody
+                    //-         tr.tr
+                    //-             td.td asd
+                    //-             td.td asd
+                    //-             td.td asd

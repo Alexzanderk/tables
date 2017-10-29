@@ -29,18 +29,19 @@ module.exports = {
 
     module: {
         rules: [
-            {
-                test: /\.js?$/,
-                include: path.resolve(__dirname, "src/js"),
-                // exclude: path.resolve(__dirname, "node_modules"),
-                use: {
-                    loader: "babel-loader",
-                    options: {
-                        presets: ["env"]
-                    },
+            // {
+            //     test: /\.js?$/,
+            //     include: path.resolve(__dirname, "src/js"),
+            //     // exclude: path.resolve(__dirname, "node_modules"),
+            //     use: {
+            //         loader: "babel-loader",
+            //         options: {
+            //             presets: ["env"],
+            //             sourceMap: true
+            //         },
 
-                }
-            },
+            //     }
+            // },
             {
                 test: /\.ts?$/,
                 use: {

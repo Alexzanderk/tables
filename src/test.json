@@ -1,0 +1,18 @@
+{
+  "type": {
+    "title": "wood",
+    "type": "string"
+  },
+  "sort": {
+    "title": "sort",
+    "type": "string"
+  },
+  "length": {
+    "title": "length",
+    "type": "number"
+  },
+  "price": {
+    "title": "price",
+    "type" : "number"
+  }
+}
