@@ -16,36 +16,73 @@ body
     padding: 10px
     border: 0
     outline: none
-    background: #aaa
+    background: #f2b632
     color: #ffffff
     font-weight: 800
     cursor: pointer
     letter-spacing: 1px
-    box-shadow: 0px 0px 1px #000
     margin: 5px
     border-radius: 0px
     transition: all 0.3s ease
     &:hover
-        background: darken(#aaa, 10%)
+        background: darken(#f2b632, 10%)
 
 #tableContainer
     margin-top: 20px
 .table
-    border: 1px solid #000
     border-collapse: collapse
     text-transform: capitalize
     width: 100%
+    border: none
 .thead
     font-weight: 800
     text-align: center
     font-size: 18px
+    color: #fff
     .tr
+        border: none
         .td
+            background: #252839
             border: 1px solid #000
             padding: 5px
 
 .tbody
     .tr
+        width: 100%
+        border: none
+        &:hover > .controll_container
+            opacity: 1
+
         .td
             border: 1px solid #000
             padding: 5px
+            // width: 100%
+.tbody>.tr>.td.edit
+    .input
+        display: block
+    .label
+        display: none
+.input
+    outline: none
+    display: none
+
+.btn_control
+    padding: 5px 10px
+    border: 0
+    outline: none
+    background: #edd9c0
+    color: #7d4627
+    font-weight: 800
+    cursor: pointer
+    letter-spacing: 1px
+    margin: 5px
+    border-radius: 0px
+    transition: all 0.3s ease
+    &:hover
+        background: darken(#edd9c0, 10%)
+
+.controll_container
+    // opacity: 0
+    display: flex
+    .btn_control
+        flex: 1
