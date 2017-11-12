@@ -1,0 +1,74 @@
+{
+    "1": {
+        "type-product": {
+            "title" : "зеленка",
+            "type": "string"
+        },
+        "sort": {
+            "title" :  "береза",
+            "type": "string"
+        },
+        "length": {
+            "title" :  "500",
+            "type": "number"
+        },
+        "price": {
+            "title" :  "55000",
+            "type": "number"
+        }
+    },
+    "2": {
+        "type-product": {
+            "title" : "Хвоя",
+            "type": "string"
+        },
+        "sort": {
+            "title" :  "Елка",
+            "type": "string"
+        },
+        "length": {
+            "title" :  "500",
+            "type": "number"
+        },
+        "price": {
+            "title" :  "15000",
+            "type": "number"
+        }
+    },
+    "3": {
+        "type-product": {
+            "title" : "Хвоя",
+            "type": "string"
+        },
+        "sort": {
+            "title" :  "сосна",
+            "type": "string"
+        },
+        "length": {
+            "title" :  "1000",
+            "type": "number"
+        },
+        "price": {
+            "title" :  "1000",
+            "type": "number"
+        }
+    },
+    "4": {
+        "type-product": {
+            "title" : "Смешанный",
+            "type": "string"
+        },
+        "sort": {
+            "title" :  "Ясень",
+            "type": "string"
+        },
+        "length": {
+            "title" :  "2",
+            "type": "number"
+        },
+        "price": {
+            "title" :  "2",
+            "type": "number"
+        }
+    }
+}
