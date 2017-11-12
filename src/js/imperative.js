@@ -127,10 +127,11 @@ export const app = (function () {
         if (table) tableContainer.removeChild(table);
     }
 
-    function writeCell() {
+    function writeCell(e) {
         // debugger;
         const thisTd = this;
         const table = this.parentNode.parentNode;
+        const cells = table.querySelectorAll('td');
         const focusedInput = document.querySelector('#focus');
         const editClass = table.querySelectorAll('.td.edit');
         const label = this.querySelector('.label');
@@ -196,61 +197,6 @@ export const app = (function () {
         }
     }
 
-    let dir = 'asc';
-    // function sortTable(e) {
-    //     e.preventDefault();
-
-    //     const findElement = (that, id) => {
-    //         let elem = that.parentNode;
-    //         if (elem.className === id) {
-    //             return elem;
-    //         } else {
-    //             return findElement(elem, id);
-    //         }
-    //     }
-
-    //     const cellIndex = this.parentNode.cellIndex;
-    //     const table = findElement(this, 'table');
-    //     const elementAttribute = this.getAttribute('data-type');
-
-    //     function sortTableGrid(cellIndex, type) {
-    //         const tbody = table.querySelector('tbody');
-    //         const rowsArray = [].slice.call(tbody.rows);
-
-    //         if (dir == 'asc') {
-    //             const compare = function (rowA, rowB) {
-    //                 if (type === 'number') {
-    //                         return +rowA.cells[cellIndex].innerText - +rowB.cells[cellIndex].innerText;
-    //                 } else if (type === 'string') {
-    //                         return rowA.cells[cellIndex].innerText > rowB.cells[cellIndex].innerText;
-    //                 }
-    //             };
-    //             rowsArray.sort(compare);
-    //             dir = 'desc';
-    //         } else if (dir == 'desc') {
-    //             const compare = function (rowA, rowB) {
-    //                 if (type === 'number') {
-    //                     return +rowB.cells[cellIndex].innerText - +rowA.cells[cellIndex].innerText;
-    //                 } else if (type === 'string') {
-    //                     return rowA.cells[cellIndex].innerText < rowB.cells[cellIndex].innerText;
-    //                 }
-    //             };
-    //             rowsArray.sort(compare);
-    //             dir = 'asc';
-    //         }
-
-    //         table.removeChild(tbody);
-
-    //         for (var i = 0; i < rowsArray.length; i++) {
-    //             tbody.appendChild(rowsArray[i]);
-    //         }
-
-    //         table.appendChild(tbody);
-    //     }
-
-    //     sortTableGrid(cellIndex, elementAttribute);
-    // }
-
     function sortTable(e) {
         e.preventDefault();
 
@@ -274,27 +220,14 @@ export const app = (function () {
             const rowsArray = [].slice.call(tbody.rows);
 
 
-            if (!sortButton.getAttribute('data-sort')) {
-                sortButtons.forEach(element => element.removeAttribute('data-sort'));
-
-                const compare = function (rowA, rowB) {
-                    if (type === 'number') {
-                        sortButtons[cellIndex].setAttribute('data-sort', 'asc');
-                        return +rowA.cells[cellIndex].innerText - +rowB.cells[cellIndex].innerText;
-                    } else if (type === 'string') {
-                        sortButtons[cellIndex].setAttribute('data-sort', 'asc');
-                        return rowA.cells[cellIndex].innerHTML > rowB.cells[cellIndex].innerHTML;
-                    }
-                };
-                rowsArray.sort(compare);
-            } else if (sortButton.getAttribute('data-sort') == 'asc') {
+            if (sortButton.getAttribute('data-sort') == 'asc') {
                 const compare = function (rowA, rowB) {
                     if (type === 'number') {
                         sortButtons[cellIndex].setAttribute('data-sort', 'desc');
                         return +rowB.cells[cellIndex].innerText - +rowA.cells[cellIndex].innerText;
                     } else if (type === 'string') {
                         sortButtons[cellIndex].setAttribute('data-sort', 'desc');
-                        return rowA.cells[cellIndex].innerHTML < rowB.cells[cellIndex].innerHTML;
+                        return rowA.cells[cellIndex].innerText < rowB.cells[cellIndex].innerText;
                     }
                 };
                 rowsArray.sort(compare);
@@ -305,7 +238,20 @@ export const app = (function () {
                         return +rowA.cells[cellIndex].innerText - +rowB.cells[cellIndex].innerText;
                     } else if (type === 'string') {
                         sortButtons[cellIndex].setAttribute('data-sort', 'asc');
-                        return rowA.cells[cellIndex].innerHTML > rowB.cells[cellIndex].innerHTML;
+                        return rowA.cells[cellIndex].innerText > rowB.cells[cellIndex].innerText;
+                    }
+                };
+                rowsArray.sort(compare);
+            } else {
+                sortButtons.forEach(element => element.removeAttribute('data-sort'));
+
+                const compare = function (rowA, rowB) {
+                    if (type === 'number') {
+                        sortButtons[cellIndex].setAttribute('data-sort', 'asc');
+                        return +rowA.cells[cellIndex].innerText - +rowB.cells[cellIndex].innerText;
+                    } else if (type === 'string') {
+                        sortButtons[cellIndex].setAttribute('data-sort', 'asc');
+                        return rowA.cells[cellIndex].innerText > rowB.cells[cellIndex].innerText;
                     }
                 };
                 rowsArray.sort(compare);
